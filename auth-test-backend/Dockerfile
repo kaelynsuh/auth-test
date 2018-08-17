@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.5.1
 
 ARG UID
 RUN adduser rails --uid $UID --disabled-password --gecos ""
