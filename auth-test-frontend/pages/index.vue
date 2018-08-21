@@ -1,33 +1,24 @@
-<template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        auth-test-frontend
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+<template lang="pug">
+  div.row
+    .col(v-for="example in examples", :style="{ 'background-color': `${example.colour}` }") {{ example.name }}
+
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
 export default {
-  components: {
-    AppLogo
+  data() {
+    return {
+      examples: []
+    }
+  },
+  methods: {
+    async updateExamples() {
+      this.examples = await this.$axios.$get('/examples')
+    },
+  },
+  mounted () {
+    this.updateExamples()
   }
 }
 </script>
@@ -61,5 +52,12 @@ export default {
 .links {
   padding-top: 15px;
 }
+</style>
+
+<style scoped>
+  .row {
+    display: flex;
+    flex: 1;
+  }
 </style>
 

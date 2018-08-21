@@ -1,7 +1,9 @@
-<template>
-  <div>
-    <nuxt/>
-  </div>
+<template lang="pug">
+  div
+    nav.navbar.navbar-dark.bg-dark
+      a.navbar-brand(href="/") Auth Test
+    .container
+      nuxt
 </template>
 
 <style>
