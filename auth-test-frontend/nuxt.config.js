@@ -33,8 +33,12 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    vendor: ['bootstrap']
   },
+  css: [
+    'bootstrap/dist/css/bootstrap.css'
+  ],
   modules: [
     '@nuxtjs/axios'
   ],
