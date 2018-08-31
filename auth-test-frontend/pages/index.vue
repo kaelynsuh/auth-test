@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.row
+  .row
     .col(v-for="example in examples", :style="{ 'background-color': `${example.colour}` }") {{ example.name }}
 
 </template>
